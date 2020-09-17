@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaciones Multiples</title>
+  <style>
+    body {
+      display: flex;
+      /*align-items: center;*/
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+    .container {
+      border: 1px solid red;
+      width: 100%;
+    }
+    /*.cuadrado:hover {*/
+    .container:hover .cuadrado {
+      animation-play-state: paused;
+    }
+    .cuadrado {
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      border-radius: 50%;
+      /*transition: .3s;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation-name: cuadrado, rebote, cambio;  /*rebote;*/
+      animation-duration: 3s, .3s;
+      /*animation-delay: 1s;*/
+      /*animation-iteration-count: 2;*/
+      animation-iteration-count: infinite, 20;
+      /*animation-timing-function: ease;*/
+      /*animation-direction: reverse;*/
+      animation-direction: alternate;
+      /*animation-fill-mode: forwards;*/
+      /*animation-play-state: running;*/
+      /*animation-play-state: paused;*/
+      /*animation-timing-function: cubic-bezier(1, 1,1 ,1);*/
+      /*animation-timing-function: ease;*/
+      /*animation-timing-function: ease-in;*/
+      /*animation-timing-function: ease-out;*/
+      /*animation-timing-function: ease-in-out;*/
+      /*animation-timing-function: steps(5);*/
+      /*animation-timing-function: linear;*/
+      /*animation-timing-function: cubic-bezier(.75,-0.31,.33,1.4);*/
+      animation-timing-function: linear, ease-in-out;
+      position: relative;
+    }
+    @keyframes cuadrado {
+      0% {
+        /*opacity: 1;*/
+        left: 0;
+      }
+      100% {
+        /*opacity: 0;*/
+        left: calc(100% - 240px);
+      }
+    }
+    @keyframes escalera {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(500px);
+      }
+    }
+    @keyframes rebote {
+      /*0% {*/
+      from {
+        transform: translateY(0);
+      }
+      /*100%*/
+      to {
+        transform: translateY(100px) scale(1, .8);
+      }
+    }
+    @keyframes cambio {
+      from {
+        background-color: #7dc900;
+      }
+      to {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <body>
+    <div class="container">
+      <div class="cuadrado" id="cuadrado">
+        Hola mundo!
+      </div>
+    </div>
+
+   <script>
+     const $cuadrado = document.getElementById('cuadrado');
+    //  $cuadrado.addEventListener('nombre del enevto', 'que hago cuando el evento ocurra');
+     $cuadrado.addEventListener('animationend', (event) => {
+       console.log(event.animationName);
+       if (event.animationName === 'rebote') {
+         $cuadrado.style.animationName = 'cuadrado, escalera, cambio';
+         $cuadrado.style.animationDuration = '3s';
+       }
+     });
+   </script> 
+</body>
+</html>

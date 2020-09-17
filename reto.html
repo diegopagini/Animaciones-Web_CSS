@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<htmllang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"content="width=device-width, initial-scale=1.0" />
+    <title>Reto 2</title>
+    <style>
+      body {
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .width {
+        background: blue;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        animation-name: growth;
+        animation-duration: 10s;
+        animation-timing-function: infinite;
+      }
+
+      @keyframes growth {
+        0% {
+          width: 200px;
+        }
+        50% {
+          width: 400px;
+        }
+        100% {
+          width: 200px;
+        }
+      }
+
+      .fontSize__parragraph {
+        height: 100px;
+        width: 100%;
+        animation-name: font;
+        animation-timing-function: infinite;
+        animation-duration: 10s;
+      }
+
+      @keyframes font {
+        from {
+          font-size: 14px;
+        }
+
+        to {
+          font-size: 32px;
+        }
+      }
+
+      .background {
+        width: 100%;
+        height: 100px;
+        border: 1px solid black;
+        animation-name: traffict-light;
+        animation-timing-function: infinite;
+        animation-duration: 10s;
+      }
+
+      @keyframes traffict-light {
+        from {
+          background-color: red;
+        }
+
+        50% {
+          background-color: green;
+        }
+
+        to {
+          background-color: yellow;
+        }
+      }
+
+      .flex {
+        display: flex;
+        animation-name: flex-direction;
+        animation-timing-function: infinite;
+        animation-duration: 10s;
+      }
+
+      @keyframes flex-direction {
+        from {
+          flex-direction: row;
+        }
+
+        to {
+          flex-direction: column;
+        }
+      }
+
+      .gridColumns {
+        display: grid;
+        animation-name: grid;
+        animation-timing-function: infinite;
+        animation-duration: 10s;
+      }
+
+      @keyframes grid {
+        from {
+          grid-template-columns: repeat(1, 100px);
+        }
+
+        to {
+          grid-template-columns: repeat(3, 100px);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Animation to Flex</h1>
+    <div class="flex">
+      <div class="item">item 1</div>
+      <div class="item">item 2</div>
+      <div class="item">item 3</div>
+    </div>
+
+    <h1>Animation to Background</h1>
+    <div class="background"></div>
+
+    <h1>Animation to FontSize</h1>
+    <div class="fontSize">
+      <p class="fontSize__parragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+        exercitationem dolor nobis veniam, consectetur, totam sint nam omnis
+        numquam sunt voluptas nisi voluptatem explicabo officiis eum aspernatur
+        hic cupiditate iste.
+      </p>
+    </div>
+
+    <h1>Animation to Width</h1>
+    <div class="width">
+      <di vclass="width__element">Element Width</div>
+    </div>
+
+    <h1>Animation to Grid</h1>
+    <div class="gridColumns">
+      <div class="item">item 1</div>
+      <div class="item">item 2</div>
+      <div class="item">item 3</div>
+    </div>
+  </body>
+</html>

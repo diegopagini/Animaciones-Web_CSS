@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transiciones CSS</title>
+  <style>
+    .pelota {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      /* transition-property: width, height; */
+      /* transition-duration: 1s; */
+      /* transition-delay: 1s; */
+      /* transition-timing-function: ease; */
+      transition: width 1s ease;
+    }
+
+    .pelota.b:hover {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="pelota b"></div>
+</body>
+</html>
